@@ -22,7 +22,7 @@ export const getRandomQuoteAsync = createAsyncThunk(
       (data) => data.json()
     );
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response;
   }
 );
 
@@ -40,11 +40,11 @@ export const quoteSlice = createSlice({
       })
       .addCase(getRandomQuoteAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        state.quote = action.payload.quote;
+        state.quote = action.payload;
       });
   },
 });
 
-export const selectQuote = (state) => state.quote;
+export const selectQuote = (state) => state.quote.quote;
 
 export default quoteSlice.reducer;

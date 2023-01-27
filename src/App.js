@@ -10,19 +10,20 @@ import "./App.scss";
 function App() {
   const dispatch = useDispatch();
   /*const quote = useSelector(selectQuote);*/
-  const { quote, loading } = useSelector((state) => state.quote || {});
+  const quote = useSelector((state) => state.quote);
+  /*const { quote, loading } = useSelector((state) => state || {});*/
 
   useEffect(() => {
-    dispatch(getRandomQuoteAsync);
+    dispatch(getRandomQuoteAsync());
   }, []);
 
-  if (loading == "loading") return <p>Loading...</p>;
+  if (quote.status == "loading") return <p>Loading...</p>;
   return (
     <div id="quote-box" className="text-bg-secondary">
       <div>
         <p id="text" className="text-center fst-italic fs-3">
           <i className="bi bi-quote"></i>
-          {quote.content}
+          {quote.quote.content}
         </p>
         <p id="author" className="text-end">
           autor
