@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./index.scss";
 
-$quotebox-color: #c6b753;
+$quotebox-color: white;
 
 #quote-box {
   width: 450px;
@@ -14,11 +14,20 @@ $quotebox-color: #c6b753;
 }
 
 #author {
-  margin-inline-end: 49px;
+  margin-inline-end: 41px;
 }
 
 #quote-footer {
   background-color: $body-color;
+}
+
+#text {
+  width: 380px;
+  margin: auto;
+}
+
+#text-footer {
+  color: white;
 }
 
 .btn-primary {
