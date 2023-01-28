@@ -1,8 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./index.scss";
+
+$quotebox-color: #c6b753;
 
 #quote-box {
   width: 450px;
   height: auto;
+  background-color: $quotebox-color;
 }
 
 #buttons {
@@ -12,6 +16,26 @@
 #author {
   margin-inline-end: 49px;
 }
+
+#quote-footer {
+  background-color: $body-color;
+}
+
+.btn-primary {
+  background-color: $body-color;
+  border-color: $body-color;
+  --bs-btn-active-color: $body-color;
+  --bs-btn-active-bg: #{shade-color($body-color, 20%)};
+  --bs-btn-active-border-color: #{shade-color($body-color, 20%)};
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: shade-color($body-color, 10%);
+  color: white;
+  border-color: shade-color($body-color, 10%);
+}
+
 /*
 .App {
   text-align: center;

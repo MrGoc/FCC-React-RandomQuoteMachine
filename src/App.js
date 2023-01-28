@@ -19,19 +19,19 @@ function App() {
 
   if (quote.status == "loading") return <p>Loading...</p>;
   return (
-    <div id="quote-box" className="text-bg-secondary">
+    <div id="quote-box">
       <div>
         <p id="text" className="text-center fst-italic fs-3">
           <i className="bi bi-quote"></i>
           {quote.quote.content}
         </p>
         <p id="author" className="text-end">
-          autor
+          - {quote.quote.author}
         </p>
       </div>
       <div
         id="buttons"
-        className="d-flex align-items-center justify-content-center text-center text-bg-danger"
+        className="d-flex align-items-center justify-content-center text-center"
       >
         <div className="col">
           <a id="tweet-quote" className="btn btn-primary">
@@ -40,14 +40,19 @@ function App() {
         </div>
         <div className="col"></div>
         <div className="col">
-          <button id="new-quote" type="button" className="btn btn-primary">
+          <button
+            id="new-quote"
+            type="button"
+            className="btn btn-primary"
+            onClick={() => dispatch(getRandomQuoteAsync())}
+          >
             dodaj
           </button>
         </div>
       </div>
-      <div id="quote-footer" className="text-bg-warning">
-        <p id="text" className="text-center">
-          To sam ja
+      <div id="quote-footer">
+        <p id="text" className="text-center fs-6 fst-italic">
+          by GS
         </p>
       </div>
     </div>
