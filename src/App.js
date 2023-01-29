@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
+/*import logo from "./logo.svg";*/
 /*import { Counter } from "./features/counter/Counter";*/
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getRandomQuoteAsync, selectQuote } from "./features/quote/quoteSlice";
+import { getRandomQuoteAsync } from "./features/quote/quoteSlice";
 
 import "./App.scss";
 
@@ -30,7 +30,7 @@ function App() {
 }
 
 function QuoteBox() {
-  const dispatch = useDispatch();
+  /*const dispatch = useDispatch();*/
   const quote = useSelector((state) => state.quote);
 
   /*
